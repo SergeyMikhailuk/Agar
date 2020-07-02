@@ -80,7 +80,7 @@ function setup(amount) {
     for (let i = 0; i < amount; i++) {
         const x = rand(canvas.width);
         const y = rand(canvas.height);
-        const radius = rand(7) + 4;
+        const radius = rand(6) + 4;
         const color = `rgba(${rand(255)}, ${rand(255)}, ${rand(255)}, 1)`;
         clearanceX = x < radius * 2 ? x + radius : x - radius;
         clearanceY = y < radius * 2 ? y + radius : y - radius;
