@@ -87,7 +87,7 @@ function setup(amount) {
         balls[i] = new Ball(clearanceX, clearanceY, radius, color);
     }
 }
-setInterval(draw, 30)
+setInterval(draw, 10)
 function draw() {
     context.clearRect(0, 0, canvas.width, canvas.height);
     for (let i = balls.length - 1; i >= 0; i--) {
