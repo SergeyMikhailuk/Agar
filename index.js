@@ -8,7 +8,7 @@ function openGame() {
     startBtn.classList.add('displayNone');
     canvas.addEventListener('mousemove', onMouseInput);
     context.clearRect(0, 0, canvas.width, canvas.height);
-    setup(200);
+    setup(350);
     player();
 }
 
@@ -53,8 +53,8 @@ function player() {
         x = xmouse;
         y = ymouse;
     } else {
-        dx = (xmouse - x) / (Math.sqrt(radiusGrow + 5000));
-        dy = (ymouse - y) / (Math.sqrt(radiusGrow + 5000));
+        dx = (xmouse - x) / radiusGrow * 1.5;
+        dy = (ymouse - y) / radiusGrow * 1.5;
         if (Math.abs(dx) + Math.abs(dy) < 0.1) {
             x = xmouse;
             y = ymouse;
@@ -64,7 +64,7 @@ function player() {
         }
     }
 
-    radiusGrow = 10 + score * 0.04;
+    radiusGrow = 10 + score * 0.07;
     const gamer = new Ball(x, y, radiusGrow, 'teal').show();
 }
 
